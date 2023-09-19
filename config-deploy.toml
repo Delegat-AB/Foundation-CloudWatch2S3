@@ -4,27 +4,18 @@ repo-name    = "Foundation-CloudWatch2S3"
 part-of      = 'foundation'
 
 
-[[pre-SAM-CloudFormation]]
-name         = "INFRA-foo-bar"
-template     = 'cloudformation/foo-bar.yaml'
-account      = '{admin-account}'
-regions      = '{main-region}'
+[[CloudFormation]]
+name           = "INFRA-CloudWatch2S3"
+template       = 'CloudWatch2S3.template'
+account        = '{log-archive-account}'
+regions        = '{all-regions}'
+capabilities   = 'CAPABILITY_NAMED_IAM'
 
-[[pre-SAM-CloudFormation]]
-name         = "INFRA-baz-role"
-template     = 'cloudformation/baz-role.yaml'
-account      = 'ALL'
-regions      = '{main-region}'
-capabilities = 'CAPABILITY_NAMED_IAM'
-
-[[pre-SAM-CloudFormation]]
-name         = "INFRA-quux"
-template     = 'cloudformation/quux.yaml'
-account      = 'ALL'
-regions      = '{all-regions}'
-
-
-[SAM]
-stack-name   = "INFRA-CloudWatch2S3"
-profile      = "admin-account"
-regions      = '{all-regions}'
+[[CloudFormation]]
+name             = "INFRA-CloudWatch2S3-additional-account"
+template         = 'CloudWatch2S3-additional-account.template'
+account          = 'ALL'
+except-account   = '{log-archive-account}'
+regions          = '{all-regions}'
+separate-regions = true
+capabilities     = 'CAPABILITY_NAMED_IAM'
