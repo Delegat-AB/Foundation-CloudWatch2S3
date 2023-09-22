@@ -1,0 +1,21 @@
+# Deployment configuration
+
+repo-name    = "Foundation-CloudWatch2S3"
+part-of      = 'foundation'
+
+
+[[CloudFormation]]
+name           = "INFRA-CloudWatch2S3"
+template       = 'CloudWatch2S3.template'
+account        = '{log-archive-account}'
+regions        = '{all-regions}'
+capabilities   = 'CAPABILITY_NAMED_IAM'
+
+[[CloudFormation]]
+name             = "INFRA-CloudWatch2S3-additional-account"
+template         = 'CloudWatch2S3-additional-account.template'
+account          = 'ALL'
+except-account   = '{log-archive-account}'
+regions          = '{all-regions}'
+separate-regions = true
+capabilities     = 'CAPABILITY_NAMED_IAM'
