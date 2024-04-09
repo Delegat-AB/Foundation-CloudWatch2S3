@@ -1,5 +1,8 @@
 # Change Log
 
+## v1.0.2
+    * Added `.python-version` file for pyenv.
+
 ## v1.0.1
     * Open-source credits and URLs
     * Fixed installer initial stackset creation.
