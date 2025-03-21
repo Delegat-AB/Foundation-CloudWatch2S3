@@ -486,7 +486,7 @@ Resources:
         Fn::GetAtt:
           - LogProcessorRole
           - Arn
-      Runtime: python3.8
+      Runtime: python3.12
       Timeout: 300
       MemorySize: 160
       Code:
@@ -696,7 +696,7 @@ Resources:
         Fn::GetAtt:
           - LogSubscriberRole
           - Arn
-      Runtime: python3.9
+      Runtime: python3.12
       Timeout: 300
       MemorySize: 160
       Code:
