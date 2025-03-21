@@ -1,5 +1,8 @@
 # Change Log
 
+## v1.0.3
+    * Upgraded Python version in three places to Python 3.12.
+
 ## v1.0.2
     * Added `.python-version` file for pyenv.
 
