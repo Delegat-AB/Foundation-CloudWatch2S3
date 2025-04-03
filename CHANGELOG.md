@@ -1,5 +1,8 @@
 # Change Log
 
+## v1.0.4
+    * Refreshed scripts.
+
 ## v1.0.3
     * Upgraded Python version in three places to Python 3.12.
 
